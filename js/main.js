@@ -258,7 +258,7 @@ document.querySelector(".name").onclick = function() {
    					
    				}
    			}
-   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+document.querySelector(".name").value,true);
+   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+document.querySelector(".name").innerHTML,true);
 // 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
    			t.send();
 };
