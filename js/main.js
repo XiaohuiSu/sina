@@ -10,7 +10,9 @@ $(document).ready(function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
+   					var len = obj.length;
    					
+   					alert(len);
    					
    				}
    			}
