@@ -8,8 +8,7 @@ $(document).ready(function() {
 // $("#myFa").click(function() {
 // 
 // });
-
-$(window).load(function() {
+window.onload = function() {
 		var t=new XMLHttpRequest,
 				obj;
 			t.onreadystatechange=function() {
@@ -23,7 +22,11 @@ $(window).load(function() {
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			t.send("page=1");
 	
-});
+}
+// $(window).load(function() {
+// 	
+// 	
+// });
 
 $("#myInput").bind('input propertychange',function() {
 	var text = $("#myInput").val();
