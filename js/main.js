@@ -14,7 +14,7 @@ $(document).ready(function() {
    					var b = document.querySelectorAll(".haoyou");
    					
    					for(var j=0; j < len; ++j) {
-   						b[j].innerHTML = obj[j].name;
+   						b[j].textContent = obj[j].name;
    					}
    					
    				}
