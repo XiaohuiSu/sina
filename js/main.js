@@ -11,8 +11,11 @@ $(document).ready(function() {
    				{
    					obj=JSON.parse(this.responseText);
    					var len = obj.length;
+   					var b = document.querySelectorAll(".haoyou");
    					
-   					alert(len);
+   					for(var j=0; j < len; ++j) {
+   						b[j].innerHTML = obj[j].name;
+   					}
    					
    				}
    			}
