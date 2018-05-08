@@ -12,12 +12,12 @@ $("#myFa").click(function() {
 				if(t.readyState==4&&t.status==200)
 				{
 					obj=JSON.parse(this.responseText);
-					alert(obj);
+					alert(obj.name);
 				}
 			}
 			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-			t.send("page=Bingo");
+			t.send("page=1");
 });
 
 // $(window).load(function() {
