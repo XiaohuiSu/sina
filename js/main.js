@@ -76,7 +76,7 @@ document.querySelector(".ye input").onchange = function() {
    }
 // 
 
-$("#myInput").bind('input propertychange',function() {
+		$("#myInput").bind('input propertychange',function() {
 	var text = $("#myInput").val();
 	if(!text) {
 		document.querySelector("#myFa").style.disabled = "disabled"
@@ -85,8 +85,7 @@ $("#myInput").bind('input propertychange',function() {
 		document.querySelector("#myFa").removeAttribute("disabled");
 	}
 });
-    alert(${user});
-document.querySelector("#myFa").onclick = function() {
+		document.querySelector("#myFa").onclick = function() {
 			var c = document.querySelector("#myInput");
 	   		var t=new XMLHttpRequest,
    				obj;
@@ -101,7 +100,7 @@ document.querySelector("#myFa").onclick = function() {
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   			t.send("content="+c.value+"name="+document.querySelector(".he2 span").value);
+   			t.send("content="+c.value);
 	
 };
 
