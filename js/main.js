@@ -8,7 +8,7 @@ $(document).ready(function() {
 $(window).load(function() {
 	$.ajax({
 				type:"post",
-				url:"blog/View.do",
+				url:"http://172.17.164.36:8080/blog/View.do",
 				data: {
 					page: 1
 				}
