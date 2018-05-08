@@ -225,4 +225,24 @@ li {
 	text-align: center;
 	
 }
+#faSuccess {
+	visibility: hidden;
+	
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	
+	animation-name: mo;
+	animation-duration: 1s;
+	animation-timing-function: ease;
+}
+@keyframes zoom{
+	from {
+		visibility: visible;
+		transform: scale(.2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
 
