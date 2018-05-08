@@ -8,7 +8,7 @@ $(document).ready(function() {
 });
 
 document.querySelector(".ye input").onchange = function() {
-			var t = document.querySelector('.ye input');
+			var c = document.querySelector('.ye input');
 	   		var t=new XMLHttpRequest,
    				obj;
    			t.onreadystatechange=function() {
@@ -38,7 +38,7 @@ document.querySelector(".ye input").onchange = function() {
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   			t.send("page="+t.value);
+   			t.send("page="+c.value);
 	
 	
 };
@@ -69,7 +69,6 @@ document.querySelector(".ye input").onchange = function() {
    						
    					}
    					
-   					alert(obj[0].content);
    				}
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
