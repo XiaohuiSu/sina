@@ -85,7 +85,7 @@ $("#myInput").bind('input propertychange',function() {
 		document.querySelector("#myFa").removeAttribute("disabled");
 	}
 });
-alert(document.querySelector(".he2 span").value);
+alert(${user});
 document.querySelector("#myFa").onclick = function() {
 			var c = document.querySelector("#myInput");
 	   		var t=new XMLHttpRequest,
