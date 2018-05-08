@@ -104,9 +104,8 @@ li {
 }
 
 .remen {
-	margin-top: 30px;
+	margin-top: 20px;
 	padding-top: 10px;
-	border: 1px solid red;
 	border-radius: 4px;
 	
 	background-color: white;
@@ -114,7 +113,6 @@ li {
 .remen-inner {
 	margin: auto;
 	padding: 10px 10px 6px 60px;
-	border: 1px solid red;
 	
 	width: 96%;
 	
@@ -214,6 +212,17 @@ li {
 }
 .dian {
 	background-image: url(../img/main_images/点赞.png);
+	
+}
+.ye {
+	margin-top: 10px;
+	
+}
+.ye input {
+	width: 26px;
+	height: 26px;
+	
+	text-align: center;
 	
 }
 
