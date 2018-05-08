@@ -258,8 +258,8 @@ document.querySelector(".name").onclick = function() {
    					
    				}
    			}
-   			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
-   			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   			t.send("page=1&ishot=false&"+"name=BIngo");
+   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name=BIngo",true);
+// 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   			t.send();
 };
 
