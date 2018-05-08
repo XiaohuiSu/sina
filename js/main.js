@@ -15,7 +15,7 @@ $(document).ready(function() {
    					var b = document.querySelectorAll(".haoyou");
    					
    					for(var j=0; j < len; ++j) {
-   						$(".guan-zhu").append("<li class=\"haoyou\">"+obj.name+"</li>");
+   						$(".guan-zhu").append("<li class=\"haoyou\">"+obj[j].name+"</li>");
    						
 // 						b[j].innerHTML = obj[j].name;
    					}
