@@ -242,8 +242,10 @@ document.querySelector(".he2 a").onclick = function() {
 	
 };
 
-document.querySelector(".name").onclick = function() {
+document.querySelector(".name").onclick = function(this) {
 			Zhong.status = 0;
+			alert(this.nextSibling.nextSibling.innerHTML);
+		
 		var t=new XMLHttpRequest,
    				obj;
    			t.onreadystatechange=function() {
