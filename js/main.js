@@ -1,7 +1,8 @@
 var Zhong = {
 	myDian: 1,
 	status: 1,
-	ff: 1
+	ff: 1,
+	name: ""
 };
 
 $(document).ready(function() {
@@ -61,6 +62,7 @@ document.querySelector(".shou-ye").onclick = function() {
 			if(t.readyState==4&&t.status==200)
 			{
 				obj=JSON.parse(this.responseText);
+   				var id = document.querySelectorAll(".my-id")
 				
 				var name = document.querySelectorAll(".name");
 				var time = document.querySelectorAll(".time");
@@ -70,6 +72,8 @@ document.querySelector(".shou-ye").onclick = function() {
 				var dian = document.querySelectorAll(".dian");
 				
 				for(var i=0; i<10; ++i) {
+   						id[i].innerHTML = obj[i].userid;
+					
 					name[i].innerHTML = obj[i].nickName;
 					time[i].innerHTML = obj[i].createTime;
 					content[i].innerHTML = obj[i].content;
@@ -98,6 +102,7 @@ document.querySelector(".ye input").onchange = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
+   					var id = document.querySelectorAll(".my-id")
    					
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -107,6 +112,8 @@ document.querySelector(".ye input").onchange = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						id[i].innerHTML = obj[i].userid;
+   						
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
    						content[i].innerHTML = obj[i].content;
@@ -141,6 +148,7 @@ document.querySelector(".ye input").onchange = function() {
    				{
    					obj=JSON.parse(this.responseText);
    					
+   					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
    					var content = document.querySelectorAll(".remen-inner p");
@@ -149,6 +157,7 @@ document.querySelector(".ye input").onchange = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
    						content[i].innerHTML = obj[i].content;
@@ -204,6 +213,7 @@ document.querySelector(".he2 a").onclick = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
+   					var id = document.querySelectorAll(".my-id")
    					
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -213,6 +223,8 @@ document.querySelector(".he2 a").onclick = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						id[i].innerHTML = obj[i].userid;
+   						
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
    						content[i].innerHTML = obj[i].content;
@@ -238,6 +250,7 @@ document.querySelector(".name").onclick = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
+   					var id = document.querySelectorAll(".my-id")
    					
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -247,6 +260,8 @@ document.querySelector(".name").onclick = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						id[i].innerHTML = obj[i].userid;
+   						
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
    						content[i].innerHTML = obj[i].content;
@@ -258,7 +273,7 @@ document.querySelector(".name").onclick = function() {
    					
    				}
    			}
-   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+document.querySelector(".name").innerHTML,true);
+   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+document.querySelector(".my-id").innerHTML,true);
 // 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
    			t.send();
 };
