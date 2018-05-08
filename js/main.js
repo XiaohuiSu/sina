@@ -85,7 +85,7 @@ $("#myInput").bind('input propertychange',function() {
 		document.querySelector("#myFa").removeAttribute("disabled");
 	}
 });
-alert(${user});
+    alert(${user});
 document.querySelector("#myFa").onclick = function() {
 			var c = document.querySelector("#myInput");
 	   		var t=new XMLHttpRequest,
