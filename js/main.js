@@ -12,12 +12,12 @@ $(window).load(function() {
 				if(t.readyState==4&&t.status==200)
 				{
 					obj=JSON.parse(this.responseText);
-					alert(obj[0].id);
+					alert(obj);
 				}
 			}
 			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-			t.send("page=1");
+			t.send("page=Bingo");
 // 	$.ajax({
 // 				type:"post",
 // 				url:"http://172.17.164.36:8080/blog/View.do",
