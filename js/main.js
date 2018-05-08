@@ -15,18 +15,14 @@ window.onload = function() {
 				if(t.readyState==4&&t.status==200)
 				{
 					obj=JSON.parse(this.responseText);
-					alert(obj.name);
+					alert(obj[0].id);
 				}
 			}
 			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			t.send("page=1");
-	
 }
-// $(window).load(function() {
-// 	
-// 	
-// });
+
 
 $("#myInput").bind('input propertychange',function() {
 	var text = $("#myInput").val();
