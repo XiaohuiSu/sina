@@ -102,13 +102,16 @@ document.querySelector(".ye input").onchange = function() {
    					obj=JSON.parse(this.responseText);
    					
    					
-   					alert(obj);
-   					document.querySelector("#myInput").value = '';
+   					alert(obj.status);
+
    				}
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
    			t.send("content="+c.value);
+   			
+   			document.querySelector("#myInput").value = '';
+   			
 	
 };
 
