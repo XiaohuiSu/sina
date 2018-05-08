@@ -1,10 +1,13 @@
 var Zhong = {
 	myDian: 1,
-	status: 1
+	status: 1,
+	ff: 1
 };
 
 $(document).ready(function() {
 	$(".sec").click(function() {
+		if(Zhong.ff === 1) {
+			
 		var t=new XMLHttpRequest,
    				obj;
    			t.onreadystatechange=function() {
@@ -17,13 +20,15 @@ $(document).ready(function() {
    					for(var j=0; j < len; ++j) {
    						$(".guan-zhu").append("<li class=\"haoyou\">"+obj[j].name+"</li>");
    						
-// 						b[j].innerHTML = obj[j].name;
    					}
    					
    				}
    			}
    			t.open("GET","http://172.17.164.36:8080/blog/Fwl.do",true);
    			t.send();
+   			
+   			Zhong.ff = 0;
+		}
 		
 		
 		if(Zhong.myDian === 1)
