@@ -11,10 +11,10 @@ $(window).load(function() {
 				url:"http://172.17.164.36:8080/blog/View.do",
 				data: {
 					page: 1
-				}
-				dataType: "json"
+				},
+				dataType: "json",
 				success: function(msg) {
-					alert(msg.id);
+					alert(msg[0].id);
 				}
 			});
 	
