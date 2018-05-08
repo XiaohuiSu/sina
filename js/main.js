@@ -93,19 +93,19 @@ document.querySelector(".ye input").onchange = function() {
 	}
 });
 		document.querySelector("#myFa").onclick = function() {
-//			var c = document.querySelector("#myInput");
-//	   		var t=new XMLHttpRequest,
-// 				obj;
-// 			t.onreadystatechange=function() {
-// 				if(t.readyState==4&&t.status==200)
-// 				{
-// 					obj=JSON.parse(this.responseText);
-//
-// 				}
-// 			}
-// 			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
-// 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-// 			t.send("content="+c.value);
+			var c = document.querySelector("#myInput");
+	   		var t=new XMLHttpRequest,
+   				obj;
+   			t.onreadystatechange=function() {
+   				if(t.readyState==4&&t.status==200)
+   				{
+   					obj=JSON.parse(this.responseText);
+
+   				}
+   			}
+   			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
+   			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   			t.send("content="+c.value);
    			
    			document.querySelector("#myInput").value = '';
    			document.querySelector("#faSuccess").style["animation-name"] = "zoom";
