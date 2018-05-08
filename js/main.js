@@ -1,3 +1,7 @@
+var Zhong = {
+	myDian: 1
+};
+
 $(document).ready(function() {
 	$(".sec").click(function() {
 		$("#xiaLa").css({"transform":"rotate(90deg)"});
@@ -6,6 +10,9 @@ $(document).ready(function() {
 	
 
 });
+
+
+
 
 document.querySelector(".ye input").onchange = function() {
 			var c = document.querySelector('.ye input');
@@ -95,7 +102,8 @@ document.querySelector(".ye input").onchange = function() {
    					obj=JSON.parse(this.responseText);
    					
    					
-   					alert("BIngo");
+   					alert(obj);
+   					document.querySelector("#myInput").value = '';
    				}
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
