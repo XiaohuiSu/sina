@@ -247,8 +247,14 @@ li {
 }
 .guan-zhu {
 	margin-top: 20px;
+	
+	transition: .6s;
 }
 .guan-zhu li {
 	padding: 2px 2px 2px 20px;
+	
+	background-image: url(../img/Register-img/yonghu.png);
+	background-repeat: no-repeat;
+	background-position: left;
 }
 
