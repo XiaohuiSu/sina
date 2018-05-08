@@ -31,7 +31,7 @@ $(document).ready(function() {
    						
    					}
    					
-   					alert(obj[0].id);
+   					alert(obj[0].content);
    				}
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
