@@ -37,7 +37,7 @@ li {
 	
 	padding: 4px 4px 4px 30px;
 	
-	background-image: url(http://127.0.0.1:62264/sina/img/guanzhu.png);
+	background-image: url(http://172.17.164.36:8080/blog/web/sina/img/main_images/guanzhu.png);
 	background-repeat: no-repeat;
 	background-position: 4px 8px;
 }
@@ -87,7 +87,7 @@ li {
 	height: 24px;
 	
 	padding: 4px 4px 4px 30px;
-	background-image: url(http://127.0.0.1:8848/sina/img/main_images/表情.png);
+	background-image: url(http://172.17.164.36:8080/blog/web/sina/img/main_images/表情.png);
 	background-repeat: no-repeat;
 	background-position: 6px 6px;
 }
