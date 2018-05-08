@@ -11,9 +11,6 @@ $(document).ready(function() {
    				{
    					obj=JSON.parse(this.responseText);
    					
-   			
-   						
-   					}
    					
    				}
    			}
