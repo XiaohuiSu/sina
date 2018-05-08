@@ -3,7 +3,45 @@ $(document).ready(function() {
 		$("#xiaLa").css({"transform":"rotate(90deg)"});
 		
 	});
+	
+
 });
+
+document.querySelector(".ye input").onchange = function() {
+			var t = document.querySelector('.ye input');
+	   		var t=new XMLHttpRequest,
+   				obj;
+   			t.onreadystatechange=function() {
+   				if(t.readyState==4&&t.status==200)
+   				{
+   					obj=JSON.parse(this.responseText);
+   					
+// 					var name = document.querySelectorAll(".name");
+// 					var time = document.querySelectorAll(".time");
+// 					var content = document.querySelectorAll(".remen-inner p");
+// 					var zhuan = document.querySelectorAll(".zhuan");
+// 					var ping = document.querySelectorAll(".ping");
+// 					var dian = document.querySelectorAll(".dian");
+// 					
+// 					for(var i=0; i<10; ++i) {
+// 						name[i].innerHTML = obj[i].nickName;
+// 						time[i].innerHTML = obj[i].createTime;
+// 						content[i].innerHTML = obj[i].content;
+// 						zhuan[i].innerHTML = obj[i].repostCount;
+// 						ping[i].innerHTML = obj[i].commentCount;
+// 						dian[i].innerHTML = obj[i].upvoteCount;
+// 						
+// 					}
+   					
+   					alert("Bingo");
+   				}
+   			}
+   			t.open("POST","http://172.17.164.36:8080/blog/View.do",true);
+   			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+   			t.send("page="+t.value);
+	
+	
+};
 
 
    window.onload = function() {
