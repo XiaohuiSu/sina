@@ -5,6 +5,21 @@ $(document).ready(function() {
 	});
 });
 
+$(window).load(function() {
+	$.ajax({
+				type:"post",
+				url:"blog/View.do",
+				data: {
+					page: 1
+				}
+				dataType: "json"
+				success: function(msg) {
+					alert(msg.id);
+				}
+			});
+	
+});
+
 $("#myInput").bind('input propertychange',function() {
 	var text = $("#myInput").val();
 	if(!text) {
