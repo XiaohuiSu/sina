@@ -257,4 +257,23 @@ li {
 	background-repeat: no-repeat;
 	background-position: left;
 }
+.name {
+	display: block;
+	
+	margin-bottom: -2px;
+	
+	font-size: 16px;
+	font-weight: 700;
+	
+	transition: .5s;
+}
+.name:hover {
+	cursor: pointer;
+	
+	text-shadow: 0px 0px 4px rgba(0,0,0,.7);
+	
+	
+	
+	
+}
 
