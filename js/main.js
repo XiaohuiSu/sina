@@ -4,7 +4,37 @@ var Zhong = {
 
 $(document).ready(function() {
 	$(".sec").click(function() {
-		$("#xiaLa").css({"transform":"rotate(90deg)"});
+		var t=new XMLHttpRequest,
+   				obj;
+   			t.onreadystatechange=function() {
+   				if(t.readyState==4&&t.status==200)
+   				{
+   					obj=JSON.parse(this.responseText);
+   					
+   			
+   						
+   					}
+   					
+   				}
+   			}
+   			t.open("GET","http://172.17.164.36:8080/blog/Fwl.do",true);
+   			t.send();
+		
+		
+		if(Zhong.myDian === 1)
+		{
+			$("#xiaLa").css({"transform":"rotate(90deg)"});
+			Zhong.myDian = 0;
+			
+		}
+		else 
+		{
+			$("#xiaLa").css({"transform":"rotate(0deg)"});
+			Zhong.myDian = 1;
+			
+		}
+		
+		
 		
 	});
 	
