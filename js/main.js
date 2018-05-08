@@ -22,12 +22,15 @@ $(document).ready(function() {
 		{
 			$("#xiaLa").css({"transform":"rotate(90deg)"});
 			Zhong.myDian = 0;
+			$(".guan-zhu").style.visibility = "hidden"
 			
 		}
 		else 
 		{
 			$("#xiaLa").css({"transform":"rotate(0deg)"});
 			Zhong.myDian = 1;
+			$(".guan-zhu").style.visibility = "visible";
+			
 			
 		}
 		
