@@ -131,8 +131,12 @@ document.querySelector(".ye input").onchange = function() {
    				t.send("page="+c.value+"&ishot=true");
    				
    			}
-   			else {
+   			else if(Zhong.status === 0 && Zhong.name=='') {
    				t.send("page="+c.value+"&ishot=false");
+   				
+   			}
+   			else if(Zhong.status === 0 && Zhong.name != '') {
+   				t.send("page="+c.value+"&ishot=false"+"&name="+Zhong.name);
    				
    			}
 	
@@ -206,6 +210,7 @@ document.querySelector(".ye input").onchange = function() {
 };
 document.querySelector(".he2 a").onclick = function() {
 	
+	    Zhong.name = '';
 		Zhong.status = 0;
 		var t=new XMLHttpRequest,
    				obj;
@@ -244,8 +249,8 @@ document.querySelector(".he2 a").onclick = function() {
 
 function my(r) {
 			Zhong.status = 0;
+			Zhong.name = r.innerHTML;
 			var id = r.parentNode.childNodes[5].innerHTML;
-			console.log(id);
 		
 		var t=new XMLHttpRequest,
    				obj;
