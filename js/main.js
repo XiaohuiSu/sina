@@ -145,13 +145,15 @@ document.querySelector(".ye input").onchange = function() {
 
 
    window.onload = function() {
+   					console.log("Bingo");
+   	
    		var t=new XMLHttpRequest,
    				obj;
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					
-   					console.log("Bingo");
+
    					obj=JSON.parse(this.responseText);
 // 					var zhu = document.querySelectorAll(".remen img");
    					var id = document.querySelectorAll(".my-id")
