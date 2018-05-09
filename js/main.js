@@ -151,7 +151,7 @@ document.querySelector(".ye input").onchange = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
-   					var zhu = document.querySelectorAll(".remen img");
+// 					var zhu = document.querySelectorAll(".remen img");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -171,8 +171,8 @@ document.querySelector(".ye input").onchange = function() {
    						ping[i].innerHTML = obj[i].commentCount;
    						dian[i].innerHTML = obj[i].upvoteCount;
    						
-   							if(obj[i].isFrd == 'true')
-   						zhu[i].src = "img/main_images/加好友.png";
+// 							if(obj[i].isFrd == 'true')
+// 						zhu[i].src = "img/main_images/加好友.png";
    						
    					}
    					
