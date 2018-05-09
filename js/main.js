@@ -161,10 +161,8 @@ document.querySelector(".ye input").onchange = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
-   						if(obj[i].isFrd == 'true')
-   						zhu[i].src = "img/main_images/加好友.png";
+   					
    						
-   						zhu[i] = obj[i].isFrd
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
@@ -172,6 +170,9 @@ document.querySelector(".ye input").onchange = function() {
    						zhuan[i].innerHTML = obj[i].repostCount;
    						ping[i].innerHTML = obj[i].commentCount;
    						dian[i].innerHTML = obj[i].upvoteCount;
+   						
+   							if(obj[i].isFrd == 'true')
+   						zhu[i].src = "img/main_images/加好友.png";
    						
    					}
    					
