@@ -57,14 +57,15 @@ $(document).ready(function() {
 document.querySelector(".shou-ye").onclick = function() {
 	Zhong.status = 1;
    		var t=new XMLHttpRequest,
-			obj;
+			obj,
+			a=[];
 		t.onreadystatechange=function() {
 			if(t.readyState==4&&t.status==200)
 			{
 				obj=JSON.parse(this.responseText);
    				var id = document.querySelectorAll(".my-id");
 				var touxiang = document.querySelectorAll(".remen-inner");
-   				
+
 				
 				var name = document.querySelectorAll(".name");
 				var time = document.querySelectorAll(".time");
@@ -73,12 +74,17 @@ document.querySelector(".shou-ye").onclick = function() {
 				var ping = document.querySelectorAll(".ping");
 				var dian = document.querySelectorAll(".dian");
 				
+				for(var j = 0; j < obj.length; ++j) {
+   						a.push(obj[j].nickName);
+   					}
+				
 				for(var i=0; i<10; ++i) {
-   						if(a.indexOf(a[i]) == i)
+					if(a.indexOf(a[i]) == i)
    						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
    						else 
    						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
-
+					
+					
    					id[i].innerHTML = obj[i].userid;
 					
 					name[i].innerHTML = obj[i].nickName;
@@ -104,15 +110,14 @@ document.querySelector(".shou-ye").onclick = function() {
 document.querySelector(".ye input").onchange = function() {
 			var c = document.querySelector('.ye input');
 	   		var t=new XMLHttpRequest,
-   				obj;
+   				obj,
+   				a=[];
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
-   					var id = document.querySelectorAll(".my-id");
+   					var id = document.querySelectorAll(".my-id")
    					var touxiang = document.querySelectorAll(".remen-inner");
-   					
-   					
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
    					var content = document.querySelectorAll(".remen-inner p");
@@ -120,11 +125,18 @@ document.querySelector(".ye input").onchange = function() {
    					var ping = document.querySelectorAll(".ping");
    					var dian = document.querySelectorAll(".dian");
    					
+   					for(var j = 0; j < obj.length; ++j) {
+   						a.push(obj[j].nickName);
+   					}
+   					
+   					
    					for(var i=0; i<10; ++i) {
-   						if(a.indexOf(a[i]) == i)
-   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
-   						else 
-   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
+   						
+   			if(a.indexOf(a[i]) == i)
+			touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
+			else 
+			touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
+   						
    						id[i].innerHTML = obj[i].userid;
    						
    						name[i].innerHTML = obj[i].nickName;
@@ -160,7 +172,8 @@ document.querySelector(".ye input").onchange = function() {
    window.onload = function() {
    	
    		var t=new XMLHttpRequest,
-   				obj;
+   				obj,
+   				a=[];
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
@@ -177,8 +190,13 @@ document.querySelector(".ye input").onchange = function() {
    					var ping = document.querySelectorAll(".ping");
    					var dian = document.querySelectorAll(".dian");
    					
+   					for(var j = 0; j < obj.length; ++j) {
+   						a.push(obj[j].nickName);
+   					}
+   					
+   					
    					for(var i=0; i<10; ++i) {
-   						if(a.indexOf(a[i]) == i)
+   					if(a.indexOf(a[i]) == i)
    						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
    						else 
    						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
@@ -290,7 +308,8 @@ function my(r) {
 
 		
 		var t=new XMLHttpRequest,
-   				obj;
+   				obj,
+   				a=[];
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
@@ -304,6 +323,10 @@ function my(r) {
    					var zhuan = document.querySelectorAll(".zhuan");
    					var ping = document.querySelectorAll(".ping");
    					var dian = document.querySelectorAll(".dian");
+   					
+   					for(var j = 0; j < obj.length; ++j) {
+   						a.push(obj[j].nickName);
+   					}
    					
    					for(var i=0; i<10; ++i) {
    						if(a.indexOf(a[i]) == i)
