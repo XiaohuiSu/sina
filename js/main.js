@@ -246,7 +246,7 @@ document.querySelector(".he2 a").onclick = function() {
    						if(a.indexOf(a[i]) == i)
    						touxiang[i].style.backgroundImage = "url(../img/main_images/"+i+".png)";
    						else 
-   						touxiang[i].style.backgroundImage = "url(../img/main_images/"+a.indexOf(a[i]+".png)";
+   						touxiang[i].style.backgroundImage = "url(../img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
