@@ -206,7 +206,7 @@ document.querySelector(".ye input").onchange = function() {
    				{
    					obj=JSON.parse(this.responseText);
 
-   				}
+   				}m
    			}
    			t.open("POST","http://172.17.164.36:8080/blog/Pub.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
@@ -222,12 +222,14 @@ document.querySelector(".he2 a").onclick = function() {
 	    Zhong.name = '';
 		Zhong.status = 0;
 		var t=new XMLHttpRequest,
-   				obj;
+   				obj,
+   				a=[];
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
    					
+   					var touxiang = document.querySelectorAll(".remen-inner");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -236,7 +238,15 @@ document.querySelector(".he2 a").onclick = function() {
    					var ping = document.querySelectorAll(".ping");
    					var dian = document.querySelectorAll(".dian");
    					
+   					for(var j = 0; j < obj.length; ++j) {
+   						a.push(obj[j].nickName);
+   					}
+   					
    					for(var i=0; i<10; ++i) {
+   						if(a.indexOf(a[i]) == i)
+   						touxiang[i].style.backgroundImage = "url(../img/main_images/"+i+".png)";
+   						else 
+   						touxiang[i].style.backgroundImage = "url(../img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
@@ -258,7 +268,6 @@ document.querySelector(".he2 a").onclick = function() {
 
 function my(r) {
 			Zhong.status = 0;
-//			Zhong.name = r.innerHTML;
 			
 			var id = r.parentNode.childNodes[5].innerHTML;
 			Zhong.name = id;

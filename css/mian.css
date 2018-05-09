@@ -130,12 +130,12 @@ li {
 	background-repeat: no-repeat;
 	background-position: 8px 9px;
 }
-.one {
-	background-image: url(../img/main_images/touxiang.png);
+/*.one {
+	background-image: url(../img/main_images/1.png);
 	
 }
 .two {
-	background-image: url(../img/main_images/touxiang2.png);
+	background-image: url(../img/main_images/2.png);
 	
 }
 .three {
@@ -169,7 +169,7 @@ li {
 .ten {
 	background-image: url(../img/main_images/10.png);
 	
-}
+}*/
 .remen-inner span:first-child {
 	display: block;
 	
