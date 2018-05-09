@@ -145,7 +145,7 @@ document.querySelector(".ye input").onchange = function() {
 
 
    window.onload = function() {
-   					console.log("Bingo");
+   		console.log("Bingo");
    	
    		var t=new XMLHttpRequest,
    				obj;
@@ -219,7 +219,7 @@ document.querySelector(".ye input").onchange = function() {
 };
 document.querySelector(".he2 a").onclick = function() {
 	
- 		document.querySelectorAll(".remen").style.opacity = "1";
+// 		document.querySelectorAll(".remen").style.opacity = "1";
 	    Zhong.name = '';
 		Zhong.status = 0;
 		var t=new XMLHttpRequest,
@@ -261,8 +261,9 @@ document.querySelector(".he2 a").onclick = function() {
 
 function my(r) {
 			Zhong.status = 0;
-			Zhong.name = r.innerHTML;
+			
 			var id = r.parentNode.childNodes[5].innerHTML;
+			Zhong.name = id;
 		
 		var t=new XMLHttpRequest,
    				obj;
@@ -296,28 +297,28 @@ function my(r) {
    			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+id,true);
    			t.send();
 };
-
-function myJia(r) {
-	if(r.src == "img/main_images/加好友.png" ) {
-		
-	r.style.transform = 'scale(0)';
-	var m = r.parentNode.childNodes[1].childNodes[5].innerHTML;
-	var t=new XMLHttpRequest,
-   				obj;
-   			t.onreadystatechange=function() {
-   				if(t.readyState==4&&t.status==200)
-   				{
-   					
-   				}
-   			}
-   			t.open("POST","http://172.17.164.36:8080/blog/AddFwl.do",true);
-   			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   			t.send("flwid="+m);
-	}
-	else {
-	r.style.transform = 'scale(0)';
-	r.parentNode.style.opacity = ".3";
-		
-	}
-}
+//
+//function myJia(r) {
+//	if(r.src == "img/main_images/加好友.png" ) {
+//		
+//	r.style.transform = 'scale(0)';
+//	var m = r.parentNode.childNodes[1].childNodes[5].innerHTML;
+//	var t=new XMLHttpRequest,
+// 				obj;
+// 			t.onreadystatechange=function() {
+// 				if(t.readyState==4&&t.status==200)
+// 				{
+// 					
+// 				}
+// 			}
+// 			t.open("POST","http://172.17.164.36:8080/blog/AddFwl.do",true);
+// 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+// 			t.send("flwid="+m);
+//	}
+//	else {
+//	r.style.transform = 'scale(0)';
+//	r.parentNode.style.opacity = ".3";
+//		
+//	}
+//}
 
