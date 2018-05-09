@@ -72,7 +72,8 @@ document.querySelector(".shou-ye").onclick = function() {
 				var dian = document.querySelectorAll(".dian");
 				
 				for(var i=0; i<10; ++i) {
-   						id[i].innerHTML = obj[i].userid;
+					
+   					id[i].innerHTML = obj[i].userid;
 					
 					name[i].innerHTML = obj[i].nickName;
 					time[i].innerHTML = obj[i].createTime;
@@ -145,7 +146,6 @@ document.querySelector(".ye input").onchange = function() {
 
 
    window.onload = function() {
-   		console.log("Bingo");
    	
    		var t=new XMLHttpRequest,
    				obj;
@@ -229,7 +229,7 @@ document.querySelector(".he2 a").onclick = function() {
    				{
    					obj=JSON.parse(this.responseText);
    					
-   					var zhu = document.querySelectorAll(".remen img");
+// 					var zhu = document.querySelectorAll(".remen img");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -240,7 +240,7 @@ document.querySelector(".he2 a").onclick = function() {
    					
    					for(var i=0; i<10; ++i) {
    						
-   						zhu[i].src = "img/main_images/shanchu.png";
+// 						zhu[i].src = "img/main_images/shanchu.png";
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
@@ -261,9 +261,11 @@ document.querySelector(".he2 a").onclick = function() {
 
 function my(r) {
 			Zhong.status = 0;
+//			Zhong.name = r.innerHTML;
 			
 			var id = r.parentNode.childNodes[5].innerHTML;
 			Zhong.name = id;
+
 		
 		var t=new XMLHttpRequest,
    				obj;
