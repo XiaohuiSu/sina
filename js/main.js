@@ -62,7 +62,9 @@ document.querySelector(".shou-ye").onclick = function() {
 			if(t.readyState==4&&t.status==200)
 			{
 				obj=JSON.parse(this.responseText);
-   				var id = document.querySelectorAll(".my-id")
+   				var id = document.querySelectorAll(".my-id");
+				var touxiang = document.querySelectorAll(".remen-inner");
+   				
 				
 				var name = document.querySelectorAll(".name");
 				var time = document.querySelectorAll(".time");
@@ -72,7 +74,11 @@ document.querySelector(".shou-ye").onclick = function() {
 				var dian = document.querySelectorAll(".dian");
 				
 				for(var i=0; i<10; ++i) {
-					
+   						if(a.indexOf(a[i]) == i)
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
+   						else 
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
+
    					id[i].innerHTML = obj[i].userid;
 					
 					name[i].innerHTML = obj[i].nickName;
@@ -103,7 +109,9 @@ document.querySelector(".ye input").onchange = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
-   					var id = document.querySelectorAll(".my-id")
+   					var id = document.querySelectorAll(".my-id");
+   					var touxiang = document.querySelectorAll(".remen-inner");
+   					
    					
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -113,6 +121,10 @@ document.querySelector(".ye input").onchange = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						if(a.indexOf(a[i]) == i)
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
+   						else 
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						id[i].innerHTML = obj[i].userid;
    						
    						name[i].innerHTML = obj[i].nickName;
@@ -156,6 +168,7 @@ document.querySelector(".ye input").onchange = function() {
 
    					obj=JSON.parse(this.responseText);
 // 					var zhu = document.querySelectorAll(".remen img");
+   					var touxiang = document.querySelectorAll(".remen-inner");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -165,7 +178,10 @@ document.querySelector(".ye input").onchange = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
-   					
+   						if(a.indexOf(a[i]) == i)
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
+   						else 
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
@@ -279,6 +295,7 @@ function my(r) {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
+   					var touxiang = document.querySelectorAll(".remen-inner");
    					
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
@@ -289,6 +306,10 @@ function my(r) {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
+   						if(a.indexOf(a[i]) == i)
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+i+".png)";
+   						else 
+   						touxiang[i].style.backgroundImage = "url(http://172.17.164.36:8080/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
