@@ -214,6 +214,7 @@ document.querySelector(".ye input").onchange = function() {
 };
 document.querySelector(".he2 a").onclick = function() {
 	
+ 		document.querySelectorAll(".remen").style.opacity = "1";
 	    Zhong.name = '';
 		Zhong.status = 0;
 		var t=new XMLHttpRequest,
@@ -292,6 +293,8 @@ function my(r) {
 };
 
 function myJia(r) {
+	if(r.src == "img/main_images/加好友.png" ) {
+		
 	r.style.transform = 'scale(0)';
 	var m = r.parentNode.childNodes[1].childNodes[5].innerHTML;
 	var t=new XMLHttpRequest,
@@ -305,5 +308,11 @@ function myJia(r) {
    			t.open("POST","http://172.17.164.36:8080/blog/AddFwl.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
    			t.send("flwid="+m);
+	}
+	else {
+	r.style.transform = 'scale(0)';
+	r.parentNode.style.opacity = ".3";
+		
+	}
 }
 
