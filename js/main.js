@@ -219,7 +219,6 @@ document.querySelector(".ye input").onchange = function() {
 };
 document.querySelector(".he2 a").onclick = function() {
 	
-// 		document.querySelectorAll(".remen").style.opacity = "1";
 	    Zhong.name = '';
 		Zhong.status = 0;
 		var t=new XMLHttpRequest,
@@ -229,7 +228,6 @@ document.querySelector(".he2 a").onclick = function() {
    				{
    					obj=JSON.parse(this.responseText);
    					
-// 					var zhu = document.querySelectorAll(".remen img");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
@@ -240,7 +238,6 @@ document.querySelector(".he2 a").onclick = function() {
    					
    					for(var i=0; i<10; ++i) {
    						
-// 						zhu[i].src = "img/main_images/shanchu.png";
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
