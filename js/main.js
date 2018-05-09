@@ -222,8 +222,9 @@ document.querySelector(".he2 a").onclick = function() {
    				if(t.readyState==4&&t.status==200)
    				{
    					obj=JSON.parse(this.responseText);
-   					var id = document.querySelectorAll(".my-id")
    					
+   					var zhu = document.querySelectorAll(".remen img");
+   					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
    					var time = document.querySelectorAll(".time");
    					var content = document.querySelectorAll(".remen-inner p");
@@ -232,8 +233,9 @@ document.querySelector(".he2 a").onclick = function() {
    					var dian = document.querySelectorAll(".dian");
    					
    					for(var i=0; i<10; ++i) {
-   						id[i].innerHTML = obj[i].userid;
    						
+   						zhu[i].src = "img/main_images/shanchu.png";
+   						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
    						time[i].innerHTML = obj[i].createTime;
    						content[i].innerHTML = obj[i].content;
