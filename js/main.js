@@ -242,9 +242,10 @@ document.querySelector(".he2 a").onclick = function() {
 	
 };
 
-document.querySelector(".name").onclick = function(this) {
+document.querySelector(".name").onclick = function(e) {
 			Zhong.status = 0;
-			alert(this.nextSibling.nextSibling.innerHTML);
+			var id = e.target.nextSibling.nextSibling.nextSibling.nextSibling.innerHTML;
+			alert(id);
 		
 		var t=new XMLHttpRequest,
    				obj;
@@ -275,7 +276,7 @@ document.querySelector(".name").onclick = function(this) {
    					
    				}
    			}
-   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+document.querySelector(".my-id").innerHTML,true);
+   			t.open("GET","http://172.17.164.36:8080/blog/View.do?page=1&ishot=false&name="+id,true);
 // 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
    			t.send();
 };
