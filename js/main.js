@@ -83,9 +83,9 @@ document.querySelector(".shou-ye").onclick = function() {
 				
 				for(var i=0; i<10; ++i) {
 					if(a.indexOf(a[i]) == i)
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+i+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+i+".png)";
    						else 
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+a.indexOf(a[i])+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
 					
 					
    					id[i].innerHTML = obj[i].userid;
@@ -136,9 +136,9 @@ document.querySelector(".ye input").onchange = function() {
    					for(var i=0; i<10; ++i) {
    						
    			if(a.indexOf(a[i]) == i)
-			touxiang[i].style.backgroundImage = "url(/blog/main_images/"+i+".png)";
+			touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+i+".png)";
 			else 
-			touxiang[i].style.backgroundImage = "url(/blog/main_images/"+a.indexOf(a[i])+".png)";
+			touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						
@@ -200,9 +200,9 @@ document.querySelector(".ye input").onchange = function() {
    					
    					for(var i=0; i<10; ++i) {
    					if(a.indexOf(a[i]) == i)
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+i+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+i+".png)";
    						else 
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+a.indexOf(a[i])+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
@@ -281,9 +281,9 @@ document.querySelector(".he2 a").onclick = function() {
    					
    					for(var i=0; i<10; ++i) {
    						if(a.indexOf(a[i]) == i)
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+i+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+i+".png)";
    						else 
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+a.indexOf(a[i])+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
@@ -333,9 +333,9 @@ function my(r) {
    					
    					for(var i=0; i<10; ++i) {
    						if(a.indexOf(a[i]) == i)
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+i+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+i+".png)";
    						else 
-   						touxiang[i].style.backgroundImage = "url(/blog/main_images/"+a.indexOf(a[i])+".png)";
+   						touxiang[i].style.backgroundImage = "url(/blog/sina/img/main_images/"+a.indexOf(a[i])+".png)";
    						
    						id[i].innerHTML = obj[i].userid;
    						name[i].innerHTML = obj[i].nickName;
