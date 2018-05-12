@@ -40,6 +40,7 @@ $(document).ready(function() {
 			Zhong.myDian = 0;
 			document.querySelector(".guan-zhu").style.visibility = "visible";
 			
+			
 		}
 		else 
 		{
