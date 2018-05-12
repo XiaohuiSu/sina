@@ -145,7 +145,7 @@ t.onreadystatechange=function() {
 		if(obj.code == 2001) {
 			var userId = obj.user.userId;
 			sessionStorage.setItem(userId,JSON.stringify(obj.user));
-			window.location.href = 'blog/sina/main.html';
+			window.location.href = '/blog/sina/main.html';
 			
 		}
 		else {
@@ -155,7 +155,7 @@ t.onreadystatechange=function() {
 		
 	}
 }
-	t.open("POST","blog/Login.do",true);
+	t.open("POST","/blog/Login.do",true);
 	t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 	t.send("userID="+document.querySelector("#userID")+"&userPassWord="+document.querySelector("#userPassWord"));
 }
