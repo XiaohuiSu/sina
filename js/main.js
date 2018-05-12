@@ -5,7 +5,7 @@ var Zhong = {
 	name: ""
 };
 
-document.querySelector(".he2 span").innerHTML = JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userId;
+document.querySelector(".he2 span").innerHTML = JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userName;
 
 $(document).ready(function() {
 	$(".sec").click(function() {
