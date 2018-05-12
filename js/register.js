@@ -32,6 +32,6 @@ t.onreadystatechange=function() {
 }
 	t.open("POST","/blog/Reg.do",true);
 	t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	t.send("register-name="+document.querySelector("#register-name").innerHTML+"&register-mingzi="+document.querySelector("#register-mingzi").innerHTML+"&register-pas="+document.querySelector("#register-pas").innerHTML);
+	t.send("register-name="+document.querySelector("#register-name").value+"&register-mingzi="+document.querySelector("#register-mingzi").value+"&register-pas="+document.querySelector("#register-pas").value);
 }
 

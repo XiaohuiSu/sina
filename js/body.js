@@ -157,7 +157,7 @@ t.onreadystatechange=function() {
 }
 	t.open("POST","/blog/Login.do",true);
 	t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	t.send("userId="+document.querySelector("#userID").innerHTML+"&password="+document.querySelector("#userPassWord").innerHTML);
+	t.send("userId="+document.querySelector("#userID").value+"&password="+document.querySelector("#userPassWord").value);
 }
 	
 
