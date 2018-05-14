@@ -375,7 +375,7 @@ function my(r) {
 				t.open("POST","/blog/AddFwl.do",true);
 				t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				t.send("followId="+m);
-		});
+		};
 
 
 
