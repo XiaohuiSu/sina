@@ -176,6 +176,7 @@ document.querySelector(".ye input").onchange = function() {
 	
 	
 };
+}
 
 
    window.onload = function() {
@@ -382,13 +383,4 @@ function my(r) {
 				t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				t.send("followId="+m);
 		};
-
-
-
-/* 	r.style.transform = 'scale(0)';
-	r.parentNode.style.opacity = ".3"; */
-		
-	
-
-
 
