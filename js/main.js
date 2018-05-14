@@ -211,9 +211,13 @@ document.querySelector(".ye input").onchange = function() {
    						zhuan[i].innerHTML = obj[i].repostCount;
    						ping[i].innerHTML = obj[i].commentCount;
    						dian[i].innerHTML = obj[i].upvoteCount;
-   						
-						if(obj[i].isFrd == false)
-						$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
+						   
+						   
+						if(obj[i].isFrd == false) {
+							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
+							console.log(obj[i].isFrd);
+
+						}
    						
    					}
    					
