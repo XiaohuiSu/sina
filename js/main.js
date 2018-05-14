@@ -213,7 +213,7 @@ document.querySelector(".ye input").onchange = function() {
 						   
 						   
 						if(obj[i].isFrd == false && obj[i].userid !== JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userId) {
-							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
+							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注" onclick="guan(event)"/>');
 
 						}
    						
@@ -355,8 +355,7 @@ function my(r) {
    			t.open("GET","/blog/View.do?page=1&ishot=false&name="+id,true);
    			t.send();
 };
-$(document).ready(function() {
-	$(".remen img").click(function(e) {
+	function guan(e) {
 		console.log("发送请求了");
 		e.target.style.transform = 'scale(0)';
 		var m = e.target.parentNode.childNodes[1].childNodes[5].innerHTML;
@@ -378,7 +377,6 @@ $(document).ready(function() {
 				t.send("followId="+m);
 		});
 
-});
 
 
 /* 	r.style.transform = 'scale(0)';
