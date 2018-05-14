@@ -118,7 +118,9 @@ document.querySelector(".ye input").onchange = function() {
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
-   					obj=JSON.parse(this.responseText);
+					   obj=JSON.parse(this.responseText);
+ 					var zhu = document.querySelectorAll(".remen");
+					   
    					var id = document.querySelectorAll(".my-id")
    					var touxiang = document.querySelectorAll(".remen-inner");
    					var name = document.querySelectorAll(".name");
@@ -147,7 +149,11 @@ document.querySelector(".ye input").onchange = function() {
    						content[i].innerHTML = obj[i].content;
    						zhuan[i].innerHTML = obj[i].repostCount;
    						ping[i].innerHTML = obj[i].commentCount;
-   						dian[i].innerHTML = obj[i].upvoteCount;
+					    dian[i].innerHTML = obj[i].upvoteCount;
+						   
+						if(obj[i].isFrd == false && obj[i].userid !== JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userId) {
+						$(zhu[i]).append("<img src=\"img/main_images/加好友.png\" alt=\"加关注\" onclick=\"guan(event)\"/>");
+
    						
    					}
    					
