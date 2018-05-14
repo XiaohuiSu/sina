@@ -357,7 +357,7 @@ function my(r) {
 };
 
 $(".remen img").click(function(e) {
-		
+	console.log("发送请求了");
 	e.target.style.transform = 'scale(0)';
 	var m = e.target.parentNode.childNodes[1].childNodes[5].innerHTML;
 	var t=new XMLHttpRequest,
