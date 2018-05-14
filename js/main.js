@@ -212,8 +212,8 @@ document.querySelector(".ye input").onchange = function() {
    						ping[i].innerHTML = obj[i].commentCount;
    						dian[i].innerHTML = obj[i].upvoteCount;
    						
-// 							if(obj[i].isFrd == 'true')
-// 						zhu[i].src = "img/main_images/加好友.png";
+						if(obj[i].isFrd == false)
+						$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
    						
    					}
    					
@@ -352,28 +352,33 @@ function my(r) {
    			t.open("GET","/blog/View.do?page=1&ishot=false&name="+id,true);
    			t.send();
 };
-//
-//function myJia(r) {
-//	if(r.src == "img/main_images/加好友.png" ) {
-//		
-//	r.style.transform = 'scale(0)';
-//	var m = r.parentNode.childNodes[1].childNodes[5].innerHTML;
-//	var t=new XMLHttpRequest,
-// 				obj;
-// 			t.onreadystatechange=function() {
-// 				if(t.readyState==4&&t.status==200)
-// 				{
-// 					
-// 				}
-// 			}
-// 			t.open("POST","/blog/AddFwl.do",true);
-// 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-// 			t.send("flwid="+m);
-//	}
-//	else {
-//	r.style.transform = 'scale(0)';
-//	r.parentNode.style.opacity = ".3";
-//		
-//	}
-//}
+
+document.querySelectorAll(".remen img").onclick = function(e) {
+		
+	e.target.style.transform = 'scale(0)';
+	var m = e.target.parentNode.childNodes[1].childNodes[5].innerHTML;
+	var t=new XMLHttpRequest,
+				obj;
+			t.onreadystatechange=function() {
+				if(t.readyState==4&&t.status==200)
+				{
+					obj = JSON.parse(this.responseText);
+					if(obj.code == 2001) {
+						
+					} else {
+						alert("关注失败！");
+					}
+				}
+			}
+			t.open("POST","/blog/AddFwl.do",true);
+			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			t.send("flwid="+m);
+	}
+
+/* 	r.style.transform = 'scale(0)';
+	r.parentNode.style.opacity = ".3"; */
+		
+	
+
+
 
