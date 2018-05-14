@@ -372,7 +372,7 @@ document.querySelectorAll(".remen img").onclick = function(e) {
 			}
 			t.open("POST","/blog/AddFwl.do",true);
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-			t.send("flwid="+m);
+			t.send("followId="+m);
 	}
 
 /* 	r.style.transform = 'scale(0)';
