@@ -215,6 +215,7 @@ document.querySelector(".ye input").onchange = function() {
 						   
 						if(obj[i].isFrd == false) {
 							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
+							console.log("参数传过来了");
 
 						}
    						
