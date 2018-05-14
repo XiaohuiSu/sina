@@ -213,7 +213,7 @@ document.querySelector(".ye input").onchange = function() {
 						   
 						   
 						if(obj[i].isFrd == false && obj[i].userid !== JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userId) {
-							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注" onclick="guan(event)"/>');
+							$(zhu[i]).append("<img src=\"img/main_images/加好友.png\" alt=\"加关注\" onclick=\"guan(event)\"/>");
 
 						}
    						
