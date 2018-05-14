@@ -183,7 +183,7 @@ document.querySelector(".ye input").onchange = function() {
    					
 
    					obj=JSON.parse(this.responseText);
-// 					var zhu = document.querySelectorAll(".remen img");
+ 					var zhu = document.querySelectorAll(".remen");
    					var touxiang = document.querySelectorAll(".remen-inner");
    					var id = document.querySelectorAll(".my-id")
    					var name = document.querySelectorAll(".name");
@@ -215,7 +215,6 @@ document.querySelector(".ye input").onchange = function() {
 						   
 						if(obj[i].isFrd == false) {
 							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
-							console.log(obj[i].isFrd);
 
 						}
    						
