@@ -180,8 +180,6 @@ document.querySelector(".ye input").onchange = function() {
    			t.onreadystatechange=function() {
    				if(t.readyState==4&&t.status==200)
    				{
-   					
-
    					obj=JSON.parse(this.responseText);
  					var zhu = document.querySelectorAll(".remen");
    					var touxiang = document.querySelectorAll(".remen-inner");
@@ -197,7 +195,7 @@ document.querySelector(".ye input").onchange = function() {
    						a.push(obj[j].nickName);
    					}
    					
-							console.log(obj[2]);
+					
    					
    					for(var i=0; i<10; ++i) {
    					if(a.indexOf(a[i]) == i)
@@ -214,7 +212,7 @@ document.querySelector(".ye input").onchange = function() {
    						dian[i].innerHTML = obj[i].upvoteCount;
 						   
 						   
-						if(obj[i].isFrd == false) {
+						if(obj[i].isFrd == false && obj[i].userid !== JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userid) {
 							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
 
 						}
@@ -225,7 +223,8 @@ document.querySelector(".ye input").onchange = function() {
    			}
    			t.open("POST","/blog/View.do",true);
    			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-   			t.send("page=1"+"&ishot=true");
+			 t.send("page=1"+"&ishot=true");
+			   
    }
 // 
 
@@ -357,7 +356,7 @@ function my(r) {
    			t.send();
 };
 
-document.querySelectorAll(".remen img").onclick = function(e) {
+$(".remen img").click(function(e) {
 		
 	e.target.style.transform = 'scale(0)';
 	var m = e.target.parentNode.childNodes[1].childNodes[5].innerHTML;
@@ -377,7 +376,7 @@ document.querySelectorAll(".remen img").onclick = function(e) {
 			t.open("POST","/blog/AddFwl.do",true);
 			t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			t.send("followId="+m);
-	}
+	});
 
 /* 	r.style.transform = 'scale(0)';
 	r.parentNode.style.opacity = ".3"; */
