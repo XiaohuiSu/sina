@@ -197,6 +197,7 @@ document.querySelector(".ye input").onchange = function() {
    						a.push(obj[j].nickName);
    					}
    					
+							console.log(obj[2]);
    					
    					for(var i=0; i<10; ++i) {
    					if(a.indexOf(a[i]) == i)
@@ -212,7 +213,6 @@ document.querySelector(".ye input").onchange = function() {
    						ping[i].innerHTML = obj[i].commentCount;
    						dian[i].innerHTML = obj[i].upvoteCount;
 						   
-							console.log(obj[i].isFrd);
 						   
 						if(obj[i].isFrd == false) {
 							$(zhu[i]).append('<img src="img/main_images/加好友.png" alt="加关注"/>');
