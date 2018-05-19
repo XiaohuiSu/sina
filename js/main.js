@@ -149,12 +149,10 @@ document.querySelector(".ye input").onchange = function() {
    						content[i].innerHTML = obj[i].content;
    						zhuan[i].innerHTML = obj[i].repostCount;
    						ping[i].innerHTML = obj[i].commentCount;
-					    dian[i].innerHTML = obj[i].upvoteCount;
-						   
+						dian[i].innerHTML = obj[i].upvoteCount;
+						
 						if(obj[i].isFrd == false && obj[i].userid !== JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userId) {
 						$(zhu[i]).append("<img src=\"img/main_images/加好友.png\" alt=\"加关注\" onclick=\"guan(event)\"/>");
-
-   						
    					}
    					
    				}
@@ -173,7 +171,6 @@ document.querySelector(".ye input").onchange = function() {
    				t.send("page="+c.value+"&ishot=false"+"&name="+Zhong.name);
    				
    			}
-	
 	
 };
 }
@@ -319,7 +316,6 @@ function my(r) {
 			var id = r.parentNode.childNodes[5].innerHTML;
 			Zhong.name = id;
 
-		
 		var t=new XMLHttpRequest,
    				obj,
    				a=[];
