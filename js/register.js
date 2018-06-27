@@ -7,31 +7,68 @@ function closeInner()
 	document.querySelector(".register").style.display="none";
 	
 }
-function myRegister() {
-	var t=new XMLHttpRequest,
-	obj;
-t.onreadystatechange=function() {
-	if(t.readyState==4&&t.status==200)
-	{
-		obj=JSON.parse(this.responseText);
-		if(obj.code == 2001) {
-			alert("注册成功！");
-			closeInner();
+// 存储公钥
+var gg = null;
+
+window.onload = function() {
+	var t=new XMLHttpRequest;
+		t.onreadystatechange=function() {
+		if(t.readyState==4&&t.status==200)
+		{
+			gg=JSON.parse(this.responseText).publicKey;
 		}
-		else if(obj.code == 4001) {
-			alert("账户名或密码错误！");
 		}
-		else if(obj.code == 5001) {
-			alert("服务器错误！");
-		}
-		else if(obj.code == 6001) {
-			alert("已经是好友！");
-		}
-		
-	}
-}
-	t.open("POST","/blog/Reg.do",true);
-	t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	t.send("register-name="+document.querySelector("#register-name").value+"&register-mingzi="+document.querySelector("#register-mingzi").value+"&register-pas="+document.querySelector("#register-pas").value);
+		t.open("GET","/blog/security/publicKey",true);
+		t.send();
 }
 
+
+
+function encryptRequest(data, publicKey) {
+
+	var encrypt = new JSEncrypt();
+	encrypt.setPublicKey(publicKey);
+	// ajax请求发送的数据对象
+	var sendData = new Object();
+	// 将data数组赋给ajax对象
+ 	 for (var key in data) { 
+		sendData[key] = encrypt.encrypt(data[key]);
+	 }  
+
+ 
+ 	$.ajax({
+		url: "/blog/signUp",
+		type: 'post',
+		data: sendData,
+		dataType: 'json',
+		//contentType: 'application/json; charset=utf-8',
+		success: function (data) {
+
+			if(data.code == 2001) {
+				alert("注册成功！");
+				closeInner();
+			}
+			else if(data.code == 4002) {
+				alert("账户名或密码错误！");
+			}
+			else if(data.code == 5001) {
+				alert("服务器错误！");
+			}
+			else if(data.code == 6003) {
+				alert("账号已被注册！");
+			}
+		},
+		error: function (xhr) {
+			//console.error('出错了');
+		}
+	});  
+}
+
+function myRegister() {
+	var data = {};
+data['userId'] = document.querySelector("#register-name").value;
+data['nickName'] = document.querySelector("#register-mingzi").value;
+data['password'] = document.querySelector("#register-pas").value;
+	encryptRequest(data,gg);
+	
+}

@@ -135,29 +135,82 @@ $(document).ready(function() {
    	});
    });
 
+
 function myLogin() {
-	var t=new XMLHttpRequest,
-	obj;
-t.onreadystatechange=function() {
+
+		// 保存公钥
+		var publicKey = null;
+	// 设置一个Promise对象，保证异步操作的顺序执行
+	var pro = new Promise(function(resolve) {
+
+
+
+	// 请求公钥
+
+ 	var t=new XMLHttpRequest;
+	t.onreadystatechange=function() {
 	if(t.readyState==4&&t.status==200)
 	{
-		obj=JSON.parse(this.responseText);
-		if(obj.code == 2001) {
-			var userId = obj.user.userId;
-			sessionStorage.setItem(userId,JSON.stringify(obj.user));
-			window.location.href = '/blog/sina/main.html';
-			
-		}
-		else {
-			alert("用户名或密码错误！");
-		}
-	
-		
+		publicKey=JSON.parse(this.responseText).publicKey;
+		resolve();
 	}
+	}
+	t.open("GET","/blog/security/publicKey",true);
+	t.send(); 
+
+	});
+
+	pro.then(function() {
+		var data = {};
+		data['userId'] = document.querySelector("#userID").value;
+		data['password'] = document.querySelector("#userPassWord").value;
+	
+		encryptLogin(data,publicKey); 
+
+	});
+
 }
-	t.open("POST","/blog/Login.do",true);
-	t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	t.send("userId="+document.querySelector("#userID").value+"&password="+document.querySelector("#userPassWord").value);
+
+
+function encryptLogin(data, publicKey) {
+
+	var encrypt = new JSEncrypt();
+	console.log(publicKey);
+	encrypt.setPublicKey(publicKey);
+	// ajax请求发送的数据对象
+	var sendData = new Object();
+	// 将data数组赋给ajax对象
+ 	 for (var key in data) { 
+		sendData[key] = encrypt.encrypt(data[key]);
+	 }  
+
+ 
+  	$.ajax({
+		url: "/blog/signIn",
+		type: 'post',
+		data: sendData,
+		dataType: 'json',
+		//contentType: 'application/json; charset=utf-8',
+		success: function (data) {
+
+			if(data.code == 2001) {
+				var userId = data.user.userId;
+				console.log(data);
+				sessionStorage.setItem(userId,JSON.stringify(data.user));
+				window.location.href = '../main.html'; 
+
+			}
+			else if(data.code == 4002) {
+				alert("账户名或密码错误！");
+			}
+			else if(data.code == 5001) {
+				alert("用户名错误！");
+			}
+		},
+		error: function (xhr) {
+			//console.error('出错了');
+		}
+	});   
 }
 	
 

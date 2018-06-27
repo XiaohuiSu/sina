@@ -287,3 +287,10 @@ li {
 	visibility: hidden;
 }
 
+
+
+.dingwei {
+	position: fixed;
+	top: 60px;
+	left: 80px;
+}

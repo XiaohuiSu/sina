@@ -1,13 +1,16 @@
+/* 用到的一些变量 */
 var Zhong = {
 	myDian: 1,
 	status: 1,
 	ff: 1,
 	name: ""
 };
-
-document.querySelector(".he2 span").innerHTML = JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).userName;
+/* 获取当前登录的用户名 */
+document.querySelector(".he2 span").innerHTML = JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).nickName;
+console.log(JSON.parse(sessionStorage.getItem(sessionStorage.key(0))).nickName);
 
 $(document).ready(function() {
+	/* 查看关注好友列表 */
 	$(".sec").click(function() {
 		if(Zhong.ff === 1) {
 			
@@ -57,6 +60,8 @@ $(document).ready(function() {
 	
 
 });
+
+/* 查看主页，也就是热门内容 */
 document.querySelector(".shou-ye").onclick = function() {
 	Zhong.status = 1;
    		var t=new XMLHttpRequest,
@@ -107,9 +112,7 @@ document.querySelector(".shou-ye").onclick = function() {
 	
 };
 
-
-
-
+/* 换页码 */
 document.querySelector(".ye input").onchange = function() {
 			var c = document.querySelector('.ye input');
 	   		var t=new XMLHttpRequest,
@@ -175,7 +178,7 @@ document.querySelector(".ye input").onchange = function() {
 };
 }
 
-
+/* 页面加载事件 */
    window.onload = function() {
    	
    		var t=new XMLHttpRequest,
@@ -230,8 +233,8 @@ document.querySelector(".ye input").onchange = function() {
 			 t.send("page=1"+"&ishot=true");
 			   
    }
-// 
 
+       /* 发微博模块 */
 		$("#myInput").bind('input propertychange',function() {
 	var text = $("#myInput").val();
 	if(!text) {
@@ -241,6 +244,7 @@ document.querySelector(".ye input").onchange = function() {
 		document.querySelector("#myFa").removeAttribute("disabled");
 	}
 });
+		/* 点击发布按钮事件 */
 		document.querySelector("#myFa").onclick = function() {
 			var c = document.querySelector("#myInput");
 	   		var t=new XMLHttpRequest,
@@ -261,6 +265,7 @@ document.querySelector(".ye input").onchange = function() {
    			
 	
 };
+
 document.querySelector(".he2 a").onclick = function() {
 	
 	    Zhong.name = '';
@@ -356,10 +361,10 @@ function my(r) {
    				}
    			}
    			t.open("GET","/blog/View.do?page=1&ishot=false&name="+id,true);
-   			t.send();
+   			t.send();									
 };
+/* 加关注功能模块 */
 	function guan(e) {
-		console.log("发送请求了");
 		e.target.style.transform = 'scale(0)';
 		var m = e.target.parentNode.childNodes[1].childNodes[5].innerHTML;
 		var t=new XMLHttpRequest,
@@ -379,4 +384,8 @@ function my(r) {
 				t.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				t.send("followId="+m);
 		};
+
+
+
+
 

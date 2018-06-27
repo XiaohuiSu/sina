@@ -13,13 +13,10 @@
 		<link rel="stylesheet" href="css/register_nav.css" />
 		<link rel="stylesheet" href="css/register.css" />
 		
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-        
-        <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-     
+		
+		<script src="http://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+
       
         
 	</head >
@@ -46,10 +43,10 @@
 				</div>
 					<div class="he1">
 					<ul>
-						<li><img src="img/Register-img/发现 (2).png" alt="" />&nbsp;&nbsp;<a href="javascript:void(0)">发现</a></li>
-						<li><img src="img/Register-img/游戏.png" alt="" />&nbsp;&nbsp;<a href="#">游戏</a></li>
-						<li><img src="img/Register-img/视频.png" alt="" />&nbsp;&nbsp;<a href="#">视频</a></li>
-						<li><img src="img/Register-img/首页 (1).png" alt="" />&nbsp;&nbsp;<a href="#">首页</a></li>
+						<li><span class="faxian"></span>&nbsp;<a href="javascript:void(0)">发现</a></li>
+						<li><span class="youxi"></span>&nbsp;<a href="#">游戏</a></li>
+						<li><span class="shipin"></span>&nbsp;<a href="#">视频</a></li>
+						<li><span class="shouye"></span>&nbsp;<a href="#">首页</a></li>
 					</ul>
 				</div>
 			</div>
@@ -129,8 +126,8 @@
 							</div>
 							
 							<div class="yonghu">
-									<span class="touxiang">
-										<img src="img/Register-img/girl.png" alt="" />&nbsp;&nbsp;&nbsp;
+									<span class="hanxue"></span>&nbsp;&nbsp;&nbsp;
+										<span class="touxiang">
 										韩雪
 										&nbsp;&nbsp;&nbsp;&nbsp;今天&nbsp;&nbsp;
 										16:50
@@ -138,19 +135,19 @@
 									</span>
 								
 								
+								
+									
 									<span class="kaoyou">
-										<img src="img/Register-img/zan.png" alt="" />&nbsp;
-										75938
+										<span class="zan"></span>&nbsp;
+										10700
 									</span>
 										<span class="kaoyou">
-										<img src="img/Register-img/评论 (1).png" alt="" />&nbsp;
+										<span class="ping"></span>
 										3954
-										
 									</span>
-									<span class="kaoyou">
-										<img src="img/Register-img/转发.png" alt="" />&nbsp;
-										10700
-										
+										<span class="kaoyou">
+										<span class="zhuan"></span>
+										75938
 									</span>
 								
 								
@@ -187,7 +184,6 @@
 		    						
 		    						<input type="checkbox" name="jizhu" />
 		    						<label for="jizhu">记住我</label>
-		    						<span>忘记密码</span>
 		    					</div>
 		    					<div class="Buton">
 		    					     <input id="ceshi" onclick="myLogin()" type="submit" class="btn  btn-outline-warning btn-block hh " value="登录" >
